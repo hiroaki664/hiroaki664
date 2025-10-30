@@ -48,7 +48,7 @@ it provides a reproducible workflow for accurate **particle sizing** and **impur
 ## 🖼 Example Output
 | Input SEM Image | Segmentation Result | Overlay Visualization |
 |------------------|---------------------|-----------------------|
-| ![Input](results/sample_input.png) | ![Mask](results/sample_mask.png) | ![Overlay](results/overlay_sample.png) |
+| ![Input](img_data/20230704_171802.tif) | ![Mask](img_data/20230707_160903_07_mask_canny) | ![Overlay](img_data/20230707_160903_08_overlay_canny) |
 
 ---
 

@@ -1,31 +1,63 @@
-## Hi there 👋
-
 # 🧪 Nanoparticle Segmentation and Defect Detection from SEM Images
 
-This project focuses on detecting and measuring nanoparticles in SEM images  
-using deep learning models (YOLOSeg, U-Net) and classical filters (DoG, NLM).  
-In addition, we plan to extend the workflow to **defect and impurity detection**  
-using **Region-based Convolutional Neural Networks (R-CNN)** to distinguish  
-particles from attached contaminants and foreign materials.
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Image%20Processing-green)](https://opencv.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-orange)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+## 🧠 Overview
+This project aims to analyze **nanoparticle morphology** and **detect surface impurities or defects**  
+in **SEM (Scanning Electron Microscope)** images.  
+By combining classical image processing and deep learning approaches,  
+it provides a reproducible workflow for accurate **particle sizing** and **impurity classification**.
+
+---
+
+## ⚙️ Features
+- 🔬 **Automatic nanoparticle segmentation** using YOLOSeg and U-Net  
+- 🧩 **Preprocessing** with Flat-field correction, DoG, and Non-local Means filtering  
+- 🧠 **Defect detection (in progress)** using Region-based CNN (R-CNN)  
+- 📏 **Particle size and roundness measurement** for quantitative analysis  
+- 📊 Support for batch processing of SEM image datasets
 
 ---
 
 ## 📋 Pipeline
-1. **Preprocessing** – Flat-field correction, DoG, Non-local Means  
-2. **Segmentation** – YOLOSeg for nanoparticle extraction  
-3. **Postprocessing** – Contour analysis and particle sizing  
-4. **Defect Detection (in progress)** – R-CNN-based impurity and defect classification
+| Step | Description | Method |
+|------|--------------|--------|
+| 1️⃣ Preprocessing | Flat-field correction, DoG, NLM denoising | `cv2`, `scipy`, `skimage` |
+| 2️⃣ Segmentation | Nanoparticle extraction | `YOLOSeg`, `U-Net` |
+| 3️⃣ Postprocessing | Contour detection and sizing | `OpenCV` |
+| 4️⃣ Defect Detection *(ongoing)* | Foreign particle and impurity detection | `R-CNN` |
 
 ---
 
-## 🧠 Results
-- Mean IoU: 0.73  
-- AP: 0.82  
-- Robust performance for < 500 nm particles  
-- Ongoing development for adaptive impurity classification based on material type
+## 🧰 Tech Stack
+| Category | Tools / Libraries |
+|-----------|------------------|
+| Programming | Python 3.10 |
+| Image Processing | OpenCV, scikit-image, NumPy, SciPy |
+| Deep Learning | PyTorch, torchvision |
+| Visualization | Matplotlib, seaborn |
+| Development | VSCode, Git, GitHub |
 
 ---
 
-## 🖼 Example
-![Example result](results/overlay_sample.png)
+## 🖼 Example Output
+| Input SEM Image | Segmentation Result | Overlay Visualization |
+|------------------|---------------------|-----------------------|
+| ![Input](results/sample_input.png) | ![Mask](results/sample_mask.png) | ![Overlay](results/overlay_sample.png) |
 
+---
+
+## 🚀 Future Work
+- Improve robustness for irregular or small particles  
+- Implement R-CNN impurity classification with dataset augmentation  
+- Develop auto-alignment system for SEM imaging during scanning  
+- Integrate model inference pipeline for automated defect inspection  
+
+---
+
+## 📂 Repository Structure
